@@ -1,0 +1,27 @@
+renovate:
+  redis:
+    enabled: true
+
+  renovate:
+    config: |
+      {
+        "autodiscover": true,
+        "onboardingConfig": {
+          "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+          "extends": [
+            "config:recommended",
+            ":dependencyDashboard"
+          ],
+          "postUpdateOptions": [
+            "helmUpdateSubChartArchives"
+          ]
+        }
+      }
+
+  resources:
+    limits:
+      cpu: 1000m
+      memory: 768Mi
+    requests:
+      cpu: 600m
+      memory: 512Mi

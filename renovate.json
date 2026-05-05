@@ -1,0 +1,39 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:recommended",
+    ":dependencyDashboard",
+    "customManagers:dockerfileVersions"
+  ],
+  "separateMultipleMajor": true,
+  "packageRules": [
+    {
+      "automerge": true,
+      "automergeStrategy": "squash",
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchPackageNames": [
+        "*"
+      ]
+    },
+    {
+      "automerge": true,
+      "automergeStrategy": "squash",
+      "matchManagers": [
+        "github-actions"
+      ],
+      "matchPackageNames": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+         "digest",
+         "major",
+         "minor",
+         "patch"
+      ],
+      "platformAutomerge": true
+    }
+  ]
+}
