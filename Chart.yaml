@@ -1,6 +1,6 @@
 apiVersion: v2
 name: &name renovate
-version: &version 43.54.0
+version: &version 45.88.1
 dependencies:
 - name: *name
   version: *version
